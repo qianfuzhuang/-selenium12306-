@@ -43,9 +43,6 @@ class Chaojiying_Client(object):
         r = requests.post('http://upload.chaojiying.net/Upload/ReportError.php', data=params, headers=self.headers)
         return r.json()
 
-
-
-
 url='https://passport.neea.cn/NCRELogin?ReturnUrl=https://ncre-bm.neea.cn/Home/VerifyPassport/?LoginType=0|41&Safe=1'
 driver=webdriver.Chrome()
 
