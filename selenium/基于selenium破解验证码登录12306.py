@@ -59,8 +59,6 @@ driver=webdriver.Chrome()
 driver.get(url)
 # 窗口最大化
 driver.maximize_window()
-# 滚至页面底部可得到验证码页面
-# driver.execute_script("window.scrollTo(document.body.scrollWidth,document.body.scrollHeight);")
 sleep(1)
 # 切换至账号密码登录
 btn=driver.find_element_by_class_name('login-hd-account')
@@ -72,10 +70,6 @@ sleep(2)
 # 直接获取验证码图片
 driver.find_element_by_xpath(
     '//*[@id="J-loginImg"]').screenshot('./code.png')
-
-
-
-
 # 找到验证码图片
 img_pos=driver.find_element_by_xpath('//*[@id="J-loginImg"]')
 # 获取验证码左上角位置
