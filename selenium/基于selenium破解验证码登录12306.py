@@ -90,7 +90,6 @@ frame=i.crop(angle)
 # 保存
 frame.save(code_img)
 '''
-
 # 利用超级鹰接口超级鹰识别
 chaojiying = Chaojiying_Client('31415926qfz', '31415926qfz', '918548')
 im = open('code.png', 'rb').read()
@@ -126,9 +125,10 @@ for l in all_list:
     ActionChains(driver).move_to_element_with_offset(img_pos,x,y).click().perform()
     sleep(0.5)
 u=driver.find_element_by_id('J-userName')
-u.send_keys('q17633623606')
+# 账号密码
+u.send_keys('q176336')
 p=driver.find_element_by_id('J-password')
-p.send_keys('1357abcd')
+p.send_keys('1357')
 sleep(2)
 login=driver.find_element_by_id('J-login')
 login.click()
