@@ -67,6 +67,8 @@ btn=driver.find_element_by_class_name('login-hd-account')
 btn.click()
 
 sleep(2)
+#用此方法最为简便
+# 方法一：
 # 直接获取验证码图片
 driver.find_element_by_xpath(
     '//*[@id="J-loginImg"]').screenshot('./code.png')
@@ -78,7 +80,7 @@ driver.find_element_by_xpath(
 img_pos=driver.find_element_by_xpath('//*[@id="J-loginImg"]')
 # 获取验证码左上角位置
 
-
+# 方法二
 # 截取全屏再截取验证码位置
 '''
 location=img_pos.location  #x,y
@@ -100,13 +102,13 @@ frame=i.crop(angle)
 frame.save(code_img)
 '''
 
-# 超级鹰识别
+# 利用超级鹰接口超级鹰识别
 chaojiying = Chaojiying_Client('31415926qfz', '31415926qfz', '918548')
 im = open('code.png', 'rb').read()
 result=chaojiying.PostPic(im, 9004)['pic_str']
 print (chaojiying.PostPic(im, 9004)['pic_str'])
 
-
+#对返回坐标进行处理
 all_list=[]
 if '|' in result:
     list_1 = result.split('|')
