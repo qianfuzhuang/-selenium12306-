@@ -130,6 +130,7 @@ u.send_keys('q176336')
 p=driver.find_element_by_id('J-password')
 p.send_keys('1357')
 sleep(2)
+# 点击登录按钮
 login=driver.find_element_by_id('J-login')
 login.click()
 
